@@ -1,0 +1,19 @@
+<h1>Holy Schmoly! These Are Some Motherflippin' Doughnuts!</h1>
+<div class="row">
+<% @doughnuts.each do |doughnut| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<%= doughnut.image %>">
+      <div class="caption">
+        <h3><%= doughnut.Name %></h3>
+        <h3>Cost: $<%= doughnut.cost %></h3>
+        <%= link_to "More Info", doughnut, class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Doughnut', new_doughnut_path, class: "btn btn-primary" %>

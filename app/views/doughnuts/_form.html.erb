@@ -1,0 +1,45 @@
+<%= form_for(@doughnut) do |f| %>
+  <% if @doughnut.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doughnut.errors.count, "error") %> prohibited this doughnut from being saved:</h2>
+
+      <ul>
+      <% @doughnut.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Name %><br>
+    <%= f.text_field :Name %>
+  </div>
+  <div class="field">
+    <%= f.label :flavor %><br>
+    <%= f.text_field :flavor %>
+  </div>
+  <div class="field">
+    <%= f.label :glaze %><br>
+    <%= f.text_field :glaze %>
+  </div>
+  <div class="field">
+    <%= f.label :icing %><br>
+    <%= f.text_field :icing %>
+  </div>
+  <div class="field">
+    <%= f.label :filling %><br>
+    <%= f.text_field :filling %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.number_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
